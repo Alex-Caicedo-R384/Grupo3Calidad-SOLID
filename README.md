@@ -3,7 +3,7 @@
 ## Descripción
 Este repositorio contiene la **Actividad Integral sobre los Principios SOLID** realizada por el **Grupo3Calidad**. El proyecto implementa un sistema de gestión de pedidos para una panadería en Java, usando IntelliJ IDEA y Maven. El objetivo fue desarrollar un sistema base que violara los principios SOLID, refactorizarlo aplicando cada principio (SRP, OCP, LSP, ISP, DIP) con mejoras avanzadas, y documentar el proceso con capturas de pantalla.
 
-**Integrantes**: [Nombres de los miembros del grupo]  
+**Integrantes**: [Gustavo Caicedo, Ismael Corrales, Alejandor Haro, Wilson Lozada]  
 **Fecha**: Junio 2025  
 **Captura del Sistema Base**: [screenshots/base.png](screenshots/base.png)
 
