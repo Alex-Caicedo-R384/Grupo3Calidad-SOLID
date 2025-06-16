@@ -1,5 +1,3 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
         Cliente cliente = new Cliente("Ana López", "ana@example.com");
@@ -7,16 +5,16 @@ public class Main {
         pedido.agregarPan(new PanRegular("Baguette", 25.0));
         pedido.agregarPan(new PanSinGluten("Croissant", 15.0));
 
-        CalculadorPedido calculador = new CalculadorPedido(new DescuentoFiel(), new CostoDomicilio());
+        Calculable calculador = new CalculadorPedido(new DescuentoFiel(), new CostoDomicilio());
         double total = calculador.calcularTotal(pedido);
 
-        GeneradorFactura generadorFactura = new GeneradorFactura();
+        Facturable generadorFactura = new GeneradorFactura();
         String factura = generadorFactura.generarFactura(pedido, total);
 
-        ServicioCorreo servicioCorreo = new ServicioCorreo();
+        Notificable servicioCorreo = new ServicioCorreo();
         servicioCorreo.enviarNotificacionCorreo(pedido, factura);
 
-        ServicioBaseDatos servicioBD = new ServicioBaseDatos();
+        Persistible servicioBD = new ServicioBaseDatos();
         servicioBD.guardarEnBaseDatos(pedido);
 
         System.out.println("Total: $" + total);

@@ -16,3 +16,7 @@ Repositorio para la actividad integral sobre los principios SOLID, basado en un 
 ## Principio de Sustitución de Liskov (LSP)
 **Aplicación**: Convertimos `Pan` en interfaz y aseguramos que `PanRegular` y `PanSinGluten` sean sustituibles, con precios ajustados dinámicamente.
 **Problemas resueltos**: Evitamos excepciones y garantizamos comportamiento consistente.
+
+## Principio de Segregación de Interfaces (ISP)
+**Aplicación**: Dividimos `ProcesadorPedido` en `Calculable`, `Facturable`, `Notificable` y `Persistible` para que cada clase implemente solo lo necesario.
+**Problemas resueltos**: Código más claro y sin métodos innecesarios.

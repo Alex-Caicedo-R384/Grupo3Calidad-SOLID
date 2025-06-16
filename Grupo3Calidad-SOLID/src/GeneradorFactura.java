@@ -1,4 +1,5 @@
-public class GeneradorFactura {
+public class GeneradorFactura implements Facturable {
+    @Override
     public String generarFactura(PedidoPan pedido, double total) {
         StringBuilder factura = new StringBuilder();
         factura.append("Factura para ").append(pedido.getCliente().getNombre()).append("\n");
