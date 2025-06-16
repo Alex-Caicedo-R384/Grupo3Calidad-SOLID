@@ -11,3 +11,8 @@ Repositorio para la actividad integral sobre los principios SOLID, basado en un 
 ## Principio de Abierto/Cerrado (OCP)
 **Aplicación**: Implementamos `EstrategiaDescuento` y `EstrategiaCostoAdicional` para manejar descuentos y costos de envío. Usamos streams para cálculos.
 **Problemas resueltos**: Código extensible para nuevos descuentos o tipos de pedidos sin modificar clases existentes.
+
+
+## Principio de Sustitución de Liskov (LSP)
+**Aplicación**: Convertimos `Pan` en interfaz y aseguramos que `PanRegular` y `PanSinGluten` sean sustituibles, con precios ajustados dinámicamente.
+**Problemas resueltos**: Evitamos excepciones y garantizamos comportamiento consistente.

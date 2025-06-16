@@ -4,8 +4,8 @@ public class Main {
     public static void main(String[] args) {
         Cliente cliente = new Cliente("Ana López", "ana@example.com");
         PedidoPan pedido = new PedidoPan("domicilio", cliente);
-        pedido.agregarPan(new Pan("Baguette", 25.0));
-        pedido.agregarPan(new Pan("Croissant", 15.0));
+        pedido.agregarPan(new PanRegular("Baguette", 25.0));
+        pedido.agregarPan(new PanSinGluten("Croissant", 15.0));
 
         CalculadorPedido calculador = new CalculadorPedido(new DescuentoFiel(), new CostoDomicilio());
         double total = calculador.calcularTotal(pedido);
