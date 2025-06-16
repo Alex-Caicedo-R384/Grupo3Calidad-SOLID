@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Grupo3Calidad-SOLID/Grupo3Calidad-SOLID.iml" filepath="$PROJECT_DIR$/Grupo3Calidad-SOLID/Grupo3Calidad-SOLID.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Proyectos IntelIj.iml" filepath="$PROJECT_DIR$/.idea/Proyectos IntelIj.iml" />
+    </modules>
+  </component>
+</project>
