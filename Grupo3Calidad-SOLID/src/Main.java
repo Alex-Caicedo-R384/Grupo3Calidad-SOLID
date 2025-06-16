@@ -5,7 +5,10 @@ public class Main {
         pedido.agregarPan(new PanRegular("Baguette", 25.0));
         pedido.agregarPan(new PanSinGluten("Croissant", 15.0));
 
-        Calculable calculador = new CalculadorPedido(new DescuentoFiel(), new CostoDomicilio());
+        Calculable calculador = new CalculadorPedido(
+                pedido.getPanes().size() > 3 ? new DescuentoMayorista() : new DescuentoFiel(),
+                pedido.getTipoPedido().equals("domicilio") ? new CostoDomicilio() : new CostoLocal()
+        );
         double total = calculador.calcularTotal(pedido);
 
         Facturable generadorFactura = new GeneradorFactura();

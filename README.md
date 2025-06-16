@@ -20,3 +20,7 @@ Repositorio para la actividad integral sobre los principios SOLID, basado en un 
 ## Principio de Segregación de Interfaces (ISP)
 **Aplicación**: Dividimos `ProcesadorPedido` en `Calculable`, `Facturable`, `Notificable` y `Persistible` para que cada clase implemente solo lo necesario.
 **Problemas resueltos**: Código más claro y sin métodos innecesarios.
+
+## Principio de Inversión de Dependencias (DIP)
+**Aplicación**: `CalculadorPedido` depende de las abstracciones `EstrategiaDescuento` y `EstrategiaCostoAdicional`, con configuración dinámica según el pedido.
+**Problemas resueltos**: Código flexible y reutilizable para nuevas estrategias.
