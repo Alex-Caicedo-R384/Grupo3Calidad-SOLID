@@ -6,10 +6,19 @@ public class Main {
         PedidoPan pedido = new PedidoPan("domicilio", cliente);
         pedido.agregarPan(new Pan("Baguette", 25.0));
         pedido.agregarPan(new Pan("Croissant", 15.0));
-        double total = pedido.calcularTotal("fiel");
+
+        CalculadorPedido calculador = new CalculadorPedido();
+        double total = calculador.calcularTotal(pedido, "fiel");
+
+        GeneradorFactura generadorFactura = new GeneradorFactura();
+        String factura = generadorFactura.generarFactura(pedido, total);
+
+        ServicioCorreo servicioCorreo = new ServicioCorreo();
+        servicioCorreo.enviarNotificacionCorreo(pedido, factura);
+
+        ServicioBaseDatos servicioBD = new ServicioBaseDatos();
+        servicioBD.guardarEnBaseDatos(pedido);
+
         System.out.println("Total: $" + total);
-        pedido.generarFactura();
-        pedido.enviarNotificacionCorreo();
-        pedido.guardarEnBaseDatos();
     }
 }
