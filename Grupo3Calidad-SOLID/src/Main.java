@@ -7,8 +7,8 @@ public class Main {
         pedido.agregarPan(new Pan("Baguette", 25.0));
         pedido.agregarPan(new Pan("Croissant", 15.0));
 
-        CalculadorPedido calculador = new CalculadorPedido();
-        double total = calculador.calcularTotal(pedido, "fiel");
+        CalculadorPedido calculador = new CalculadorPedido(new DescuentoFiel(), new CostoDomicilio());
+        double total = calculador.calcularTotal(pedido);
 
         GeneradorFactura generadorFactura = new GeneradorFactura();
         String factura = generadorFactura.generarFactura(pedido, total);

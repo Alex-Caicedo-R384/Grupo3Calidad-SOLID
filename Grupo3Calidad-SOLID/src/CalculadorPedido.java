@@ -1,14 +1,16 @@
 public class CalculadorPedido {
-    public double calcularTotal(PedidoPan pedido, String tipoDescuento) {
+    private final EstrategiaDescuento descuento;
+    private final EstrategiaCostoAdicional costoAdicional;
+
+    public CalculadorPedido(EstrategiaDescuento descuento, EstrategiaCostoAdicional costoAdicional) {
+        this.descuento = descuento;
+        this.costoAdicional = costoAdicional;
+    }
+
+    public double calcularTotal(PedidoPan pedido) {
         double total = pedido.getPanes().stream().mapToDouble(Pan::getPrecio).sum();
-        if (tipoDescuento.equals("fiel")) {
-            total *= 0.95;
-        } else if (tipoDescuento.equals("mayorista")) {
-            total *= 0.90;
-        }
-        if (pedido.getTipoPedido().equals("domicilio")) {
-            total += 50.0;
-        }
+        total = descuento.aplicarDescuento(total);
+        total = costoAdicional.aplicarCostoAdicional(total);
         return total;
     }
 }
