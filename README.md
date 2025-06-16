@@ -10,7 +10,7 @@ Este repositorio contiene la **Actividad Integral sobre los Principios SOLID** d
 - Wilson Lozada  
 
 **Fecha**: 15 de Junio 2025  
-**Captura del Sistema Base**: [screenshots/base.png](screenshots/base.jpg)
+**Captura del Sistema Base**: [screenshots/base.jpg](screenshots/base.jpg)
 
 ## Objetivos del Proyecto
 - Crear un sistema de panadería que gestione pedidos, incluyendo panes, clientes, cálculos de totales, facturación, notificaciones y almacenamiento.
@@ -29,11 +29,11 @@ Este repositorio contiene la **Actividad Integral sobre los Principios SOLID** d
 
 | Principio | Descripción | Aplicación en el Proyecto | Beneficio | Captura |
 |-----------|-------------|---------------------------|-----------|---------|
-| **SRP** | Cada clase tiene una sola responsabilidad. | Se separaron las funciones de la clase de pedidos en clases específicas para datos, cálculo, facturación, notificaciones y almacenamiento, con validaciones robustas. | Código modular, fácil de mantener y probar. | [screenshots/srp.png](screenshots/SRP.jpg) |
-| **OCP** | Abierto para extensión, cerrado para modificación. | Se implementaron interfaces para estrategias de descuento y costos adicionales, permitiendo nuevas funcionalidades sin modificar el código existente. | Sistema extensible y mantenible. | [screenshots/ocp.png](screenshots/OCP.jpg) |
-| **LSP** | Subclases sustituibles por su clase base. | Se diseñó una interfaz para panes con implementaciones para panes regulares y sin gluten, asegurando sustituibilidad. | Comportamiento consistente y fiable. | [screenshots/lsp.png](screenshots/LSP.jpg) |
-| **ISP** | Interfaces específicas para cada cliente. | Se crearon interfaces separadas para cálculo, facturación, notificación y almacenamiento, evitando métodos innecesarios. | Código claro y enfocado. | [screenshots/isp.png](screenshots/ISP.jpg) |
-| **DIP** | Depender de abstracciones, no de implementaciones. | Se usó inyección de dependencias para que la clase de cálculo dependa de interfaces, con configuración dinámica. | Código flexible y reutilizable. | [screenshots/dip.png](screenshots/DIP.jpg) |
+| **SRP** | Cada clase tiene una sola responsabilidad. | Se separaron las funciones de la clase de pedidos en clases específicas para datos, cálculo, facturación, notificaciones y almacenamiento, con validaciones robustas. | Código modular, fácil de mantener y probar. | [screenshots/srp.jpg](screenshots/SRP.jpg) |
+| **OCP** | Abierto para extensión, cerrado para modificación. | Se implementaron interfaces para estrategias de descuento y costos adicionales, permitiendo nuevas funcionalidades sin modificar el código existente. | Sistema extensible y mantenible. | [screenshots/ocp.jpg](screenshots/OCP.jpg) |
+| **LSP** | Subclases sustituibles por su clase base. | Se diseñó una interfaz para panes con implementaciones para panes regulares y sin gluten, asegurando sustituibilidad. | Comportamiento consistente y fiable. | [screenshots/lsp.jpg](screenshots/LSP.jpg) |
+| **ISP** | Interfaces específicas para cada cliente. | Se crearon interfaces separadas para cálculo, facturación, notificación y almacenamiento, evitando métodos innecesarios. | Código claro y enfocado. | [screenshots/isp.jpg](screenshots/ISP.jpg) |
+| **DIP** | Depender de abstracciones, no de implementaciones. | Se usó inyección de dependencias para que la clase de cálculo dependa de interfaces, con configuración dinámica. | Código flexible y reutilizable. | [screenshots/dip.jpg](screenshots/DIP.jpg) |
 
 ## Instrucciones para Ejecutar el Proyecto
 1. Clona el repositorio:
