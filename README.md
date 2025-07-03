@@ -1,26 +1,68 @@
-# Grupo3Calidad - Actividad SOLID (Panadería)
-Repositorio para la actividad integral sobre los principios SOLID, basado en un sistema de panadería.
-- Proyecto base: Sistema de pedidos de panes con clase `PedidoPan` que viola SOLID.
-- Integrantes: [Gustavo Caicedo, Ismael Corrales, Alejandro Haro, Wilsón Lozada].
+# Grupo3Calidad - Actividad Integral sobre los Principios SOLID (Sistema de Panadería)
 
+## Descripción
+Este repositorio contiene la **Actividad Integral sobre los Principios SOLID** desarrollada por el **Grupo3Calidad** como parte de un curso de calidad de software. El proyecto implementa un sistema de gestión de pedidos para una panadería, desarrollado en **Java** utilizando **IntelliJ IDEA** y **Maven**. El objetivo principal fue diseñar un sistema base que intencionalmente violara los principios SOLID (Responsabilidad Única, Abierto/Cerrado, Sustitución de Liskov, Segregación de Interfaces, Inversión de Dependencias), refactorizarlo aplicando cada principio con mejoras avanzadas, y documentar el proceso mediante capturas de pantalla y reflexiones. Este trabajo demuestra cómo los principios SOLID mejoran la modularidad, extensibilidad y mantenibilidad del software.
 
-## Principio de Responsabilidad Única (SRP)
-**Aplicación**: Dividimos `PedidoPan` en `PedidoPan` (datos), `CalculadorPedido` (cálculo), `GeneradorFactura` (facturación detallada), `ServicioCorreo` (notificaciones con validación de correo), y `ServicioBaseDatos` (almacenamiento). Añadimos validaciones robustas.
-**Problemas resueltos**: Código modular, fácil de mantener, con manejo de errores y facturas claras.
+**Integrantes**:  
+- Gustavo Caicedo  
+- Ismael Corrales  
+- Alejandro Haro  
+- Wilson Lozada  
 
-## Principio de Abierto/Cerrado (OCP)
-**Aplicación**: Implementamos `EstrategiaDescuento` y `EstrategiaCostoAdicional` para manejar descuentos y costos de envío. Usamos streams para cálculos.
-**Problemas resueltos**: Código extensible para nuevos descuentos o tipos de pedidos sin modificar clases existentes.
+**Fecha**: 15 de Junio 2025  
+**Captura del Sistema Base**: [screenshots/base.jpg](screenshots/base.jpg)
 
+## Objetivos del Proyecto
+- Crear un sistema de panadería que gestione pedidos, incluyendo panes, clientes, cálculos de totales, facturación, notificaciones y almacenamiento.
+- Identificar violaciones de los principios SOLID en el sistema base.
+- Refactorizar el sistema aplicando cada principio SOLID con validaciones robustas y diseño avanzado.
+- Documentar el proceso con capturas de pantalla y reflexiones individuales.
+- Entregar un repositorio organizado y una reflexión en Brightspace.
 
-## Principio de Sustitución de Liskov (LSP)
-**Aplicación**: Convertimos `Pan` en interfaz y aseguramos que `PanRegular` y `PanSinGluten` sean sustituibles, con precios ajustados dinámicamente.
-**Problemas resueltos**: Evitamos excepciones y garantizamos comportamiento consistente.
+## Estructura del Proyecto
+- **src/main/java/com/grupo3calidad/panaderia**: Contiene el código fuente del sistema, organizado en clases para panes, clientes, pedidos y servicios.
+- **screenshots**: Carpeta con capturas de pantalla de la ejecución del sistema base y cada refactorización.
+- **pom.xml**: Archivo de configuración de Maven para dependencias y compilación.
+- **DOCUMENTACION.md**: Documentación detallada del proyecto (en el repositorio).
 
-## Principio de Segregación de Interfaces (ISP)
-**Aplicación**: Dividimos `ProcesadorPedido` en `Calculable`, `Facturable`, `Notificable` y `Persistible` para que cada clase implemente solo lo necesario.
-**Problemas resueltos**: Código más claro y sin métodos innecesarios.
+## Resumen de los Principios SOLID Aplicados
 
-## Principio de Inversión de Dependencias (DIP)
-**Aplicación**: `CalculadorPedido` depende de las abstracciones `EstrategiaDescuento` y `EstrategiaCostoAdicional`, con configuración dinámica según el pedido.
-**Problemas resueltos**: Código flexible y reutilizable para nuevas estrategias.
+| Principio | Descripción | Aplicación en el Proyecto | Beneficio | Captura |
+|-----------|-------------|---------------------------|-----------|---------|
+| **SRP** | Cada clase tiene una sola responsabilidad. | Se separaron las funciones de la clase de pedidos en clases específicas para datos, cálculo, facturación, notificaciones y almacenamiento, con validaciones robustas. | Código modular, fácil de mantener y probar. | [screenshots/srp.jpg](screenshots/SRP.jpg) |
+| **OCP** | Abierto para extensión, cerrado para modificación. | Se implementaron interfaces para estrategias de descuento y costos adicionales, permitiendo nuevas funcionalidades sin modificar el código existente. | Sistema extensible y mantenible. | [screenshots/ocp.jpg](screenshots/OCP.jpg) |
+| **LSP** | Subclases sustituibles por su clase base. | Se diseñó una interfaz para panes con implementaciones para panes regulares y sin gluten, asegurando sustituibilidad. | Comportamiento consistente y fiable. | [screenshots/lsp.jpg](screenshots/LSP.jpg) |
+| **ISP** | Interfaces específicas para cada cliente. | Se crearon interfaces separadas para cálculo, facturación, notificación y almacenamiento, evitando métodos innecesarios. | Código claro y enfocado. | [screenshots/isp.jpg](screenshots/ISP.jpg) |
+| **DIP** | Depender de abstracciones, no de implementaciones. | Se usó inyección de dependencias para que la clase de cálculo dependa de interfaces, con configuración dinámica. | Código flexible y reutilizable. | [screenshots/dip.jpg](screenshots/DIP.jpg) |
+
+## Instrucciones para Ejecutar el Proyecto
+1. Clona el repositorio:
+   ```bash
+   git clone https://github.com/Alex-Caicedo-R384/Grupo3Calidad-SOLID.git
+
+2. Abre el proyecto en IntelliJ IDEA.
+
+3. Configura el JDK 17 en Archivo > Estructura del Proyecto > SDKs.
+
+4. Ejecuta la clase Main ubicada en src/main/java/com/grupo3calidad/panaderia para probar el sistema.
+
+5. Revisa las capturas en la carpeta screenshots para ver los resultados de cada etapa.
+
+## Reflexión General
+La aplicación de los principios SOLID transformó el sistema de panadería en uno más robusto, modular y preparado para evolucionar. SRP redujo la complejidad al separar responsabilidades, OCP permitió añadir funcionalidades sin modificar código, LSP garantizó consistencia en los tipos de pan, ISP mejoró la claridad de las interfaces, y DIP aumentó la flexibilidad con abstracciones. Este proceso demostró cómo un diseño bien fundamentado en SOLID mejora la calidad del software y facilita su mantenimiento a largo plazo.
+
+## Entregables
+Repositorio GitHub: Incluye el código refactorizado, capturas de pantalla, documentación y este README.
+
+Reflexión Individual: Cada integrante subió un documento a Brightspace respondiendo:
+¿Cuál fue el principio más desafiante de aplicar? ¿Por qué?
+
+¿Cómo crees que SOLID mejora el diseño de software?
+
+¿Qué principio SOLID aplicarías en futuros proyectos?
+
+## Agradecimientos
+Agradecemos al docente y a la institución por la oportunidad de aplicar los principios SOLID en un proyecto práctico, así como al equipo Grupo3Calidad por su colaboración y compromiso.
+
+## Licencia
+Este proyecto tiene fines educativos y no está destinado a uso comercial. Todo el contenido está disponible para revisión académica.
